@@ -101,8 +101,9 @@ abstract class ApiEndpoint extends ContentType implements Runnable {
 	 */
 	protected function get_default_args() : array {
 		return [
-			'methods'  => \WP_REST_Server::READABLE,
-			'callback' => [ $this, 'run' ],
+			'methods'             => \WP_REST_Server::READABLE,
+			'callback'            => [ $this, 'run' ],
+			'permission_callback' => '__return_true',
 		];
 	}
 
